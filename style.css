@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, button, select, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #E5E5E5;
+}
+
+/*Pseudo class para criar tipo uma caixa que fica
+sobreposta aos elementos e depois pode ser colocada
+atrás das coisas*/
+body::before {
+  content: "";
+  width: 100%;
+  height: 368px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background:#121214;
+}
+
+.page {
+  width: 736px;
+  margin: auto;
+}
+
+#text {
+  width: 319px;
+  height: 160px;
+  text-align: lefft;
+  margin-top: 80px; 
+}
+
+#text h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  
+  height: 84px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+#text p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #42D3FF;
+  
+  height: 52px;
+}
+
+form {
+  background: #FAFAFC;
+  border-radius: 8px 8px 0 0;
+  min-height: 300px;
+  margin: 42px auto 0;
+  width: 736px;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+fieldset legend {
+  font-family: Archivo, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  border-bottom: 1px solid #E6E6F0;
+  width: 100%;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.input-wraper {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.input-wraper label
+.input-wraper checkbox {
+  font-size: 14px;
+  line-height: 24px;
+  color: #4E4958;
+}
+
+.input-wraper label span {
+  font-size: 12px;
+  line-height: 20px;
+  color: #C1BCCC;
+  margin-left: 12px;
+}
+
+.input-wraper label span:hover {
+  color: #616064;
+}
+
+
+.input-wraper input, 
+.input-wraper textarea,
+.input-wraper select {
+  margin-top: 8px;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px; 
+  height: 56px;
+  padding: 0 24px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #616064;
+}
+
+.input-wraper textarea {
+  height: 168px;
+  padding: 0;
+}
+
+.input-wraper select {
+  appearance: none;
+  /*esse é do Google, Safari, p retirar o select*/
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+}
+
+
+.checkbox-wraper {
+  position: relative;
+  
+}
+
+.checkbox-wraper label{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/*aqui o position é absolute porque ele cria uma caixa
+e precisa ser colocado como position relative no
+checkbox-wraper p ficar relativo a essa propriedade*/
+
+.checkbox-wraper input {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  
+}
+
+/*Estamos adicionando um elemento através do CSS*/
+.checkbox-wraper label::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+/*Aqui quando eu fizer um checked no input ele vai 
+colocar esses parâmetros no meu label::before*/
+.checkbox-wraper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*Aqui o focus é para colocar evidência no label before*/
+.checkbox-wraper input:focus + label::before {
+  outline: 2px solid black
+
+}
+
+.date {
+  display: flex;
+  gap: 20px;
+}
+
+.date > div:nth-child(1) {
+  width: 100%;
+  border-radius: 8px;
+  color: #616064;
+}
+
+.footer {
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 64px;
+  margin-bottom: 100px;
+  background: #F0F0F4;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #D6D6D6;
+  ;
+}
+
+.footer .button {
+  height: 56px;
+  padding: 15px 40px;
+  background: #04D361;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+
+.footer .button:hover {
+  background: #07c15a;
+  cursor: pointer;
+}
+
+input:invalid {
+  border: 2px solid #FF1010;
+}
